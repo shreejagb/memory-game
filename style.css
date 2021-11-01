@@ -1,0 +1,207 @@
+@font-face {
+    font-family: creepy;
+    src: url("Assets/Fonts/Creepy.woff") format("woff"),
+         url("Assets/Fonts/Creepy.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: lunacy;
+    src: url("Assets/Fonts/Lunacy.woff") format("woff"),
+         url("Assets/Fonts/Lunacy.woff2") format("woff2");
+}
+*{
+    box-sizing: border-box;
+
+}
+html{
+    min-height: 100vh;
+    max-height: 100vh;
+    cursor: url("Assets/Cursors/Ghost.cur"),auto;
+}
+body{
+    margin: 0;
+    background: radial-gradient(#492502,#ba5f02);
+
+}
+.page-title{
+    color: #f1740e;
+    font-family: creepy,serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 3em;
+}
+.game-info-container{
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+}
+.game-info{
+    color: #f19041;
+    font-size: 1.5em;
+    font-family: lunacy,serif;
+}
+.game-container{
+    display: grid;
+    grid-template-columns: repeat(8,auto);
+    grid-gap: 10px;
+    margin: 30px;
+    justify-content: center;
+    perspective: 500px;
+  
+}
+.card{
+    position: relative;
+    height: 115px;
+    width: 92px;
+  
+
+}
+.card:hover{
+    cursor: url("Assets/Cursors/GhostHover.cur"),auto;
+}
+.card-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+    border-radius: 14px;
+    transition: transform 500ms ease-in-out;
+}
+.card.visible .card-back {
+  transform: rotateY(180deg);
+} 
+.card.visible .card-front{
+  transform: rotateY(0);
+} 
+.card.matched .card-value{
+    animation: dance 1s linear infinite 500ms ;
+}
+@keyframes dance{
+   0%,100% {
+       transform: rotate(0);
+   } 
+   25% {
+       transform: rotate(-30deg);
+   }
+   75% {
+       transform: rotate(30deg);
+   }
+}
+.overlay-text{
+   display: none;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   /* display: flex; */
+   justify-content: center;
+   align-items: center;
+   z-index: 100;
+   color: #f19041;
+   font-family: creepy,serif;
+
+}
+.overlay-text.visible{
+ display: flex;
+ flex-direction: column;
+ animation:overlay-grow 500ms forwards;
+}
+.overlay-text-small{
+   font-size: 60px; 
+}
+@keyframes overlay-grow{
+    from{
+        background-color: black;
+        font-size: 0;
+    }
+    to{
+        font-size: 10em;
+        background-color:rgba(0, 0, 0, 0.877) ;
+    }
+}
+
+.card-back{
+    background-color: rgb(0, 0, 0);
+    transform: rotateY(0);
+}
+
+.card-front{
+    transform: rotateY(180deg);
+    background-color: #FFBB89;
+}
+
+.card-value{
+    transform: scale(0.6);
+    transition: transform 100ms ease-in-out;
+}
+.card-face:hover .card-value{/*card:hover also works but just to be semantic I have used the card-face*/
+    transform: scale(0.7);
+}
+.cob-web{
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    transition: width 100ms ease-in-out,height 100ms ease-in-out;
+}
+.card-face:hover .cob-web{
+    width:40px ;
+    height:40px ;
+}
+.cob-web-top-left{
+    transform: rotate(270deg);
+    top: 0;
+    left: 0;
+}
+.cob-web-top-right{
+    top: 0;
+    right: 0;
+}
+.cob-web-bottom-left{
+    transform: rotate(180deg);
+    bottom: 0;
+    left: 0;
+}
+.cob-web-bottom-right{
+    transform: rotate(90deg);
+    bottom: 0;
+    right: 0;
+}
+.spider{
+    align-self: flex-start;
+    transform: translatey(-6px);
+    transition: transform 100ms ease-in-out;
+    width: 58px;
+    height: 89px;
+}
+.card-back:hover .spider{
+    transform: translateY(3px);
+}
+@media (max-width:600px){
+    .game-container{
+        grid-template-columns: repeat(4,auto);
+    }
+    .game-info-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        height: 85px;
+        width: 60px;
+    }
+    .cob-web{
+        width: 20px;
+        height: 20px;
+    }
+    .card-value{
+        transform: scale(0.4);
+    }
+    .spider{
+    width: 38px;
+    height: 64px;
+    }
+}
