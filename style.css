@@ -98,14 +98,14 @@ body{
    left: 0;
    right: 0;
    bottom: 0;
-   /* display: flex; */
    justify-content: center;
    align-items: center;
    z-index: 100;
    color: #f19041;
    font-family: creepy,serif;
-
+   text-align: center;
 }
+
 .overlay-text.visible{
  display: flex;
  flex-direction: column;
@@ -181,6 +181,156 @@ body{
 .card-back:hover .spider{
     transform: translateY(3px);
 }
+
+
+
+/* -----------------------overlay that has come after the click to start overlay --------------------*/
+ .halloween-bg{
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    min-height: 100vh;
+    top: 0;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.836);
+    animation:opacity-grow 1000ms forwards;
+} 
+.name-visible{
+    display: flex;
+}
+.halloween-ctn{
+    background-color:rgb(114, 58, 6) ;
+    font-family: creepy, serif;
+    color: #f19041;
+    border-radius: 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 29px 20px;
+    width: 40%;
+    font-size: 26px;
+    line-height: 13px;
+}
+form{
+    font-family:lunacy, serif;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.question-p{
+    margin-bottom: 10px;
+    font-size: 38px;
+}
+#name-input{
+    padding:12px 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(0 0 0 / 38%);
+    color: rgb(255, 255, 255);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 7px;
+    width: 98%;
+}
+.enter-btn{
+    padding-top:6px;
+    width: 97%;
+    background-color:rgba(0, 0, 0, 0.63) ;
+    color:rgb(180, 87, 11) ;
+    font-size: 30px;
+    font-family: lunacy, serif;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+@keyframes opacity-grow{
+    from{
+        opacity:0
+    }
+    to{
+        opacity:1
+    }
+}
+/* -----------------------------------end--------------------------------------------------------- */
+
+
+/* ------------------overlay that has come after you click on the enter button-------------------- */
+.rules-container{
+    width: 70%;
+    padding: 20px 17px;
+    background-color: rgba(85, 46, 14, 0.877);
+    border-radius: 10px;
+    color: rgb(184, 114, 10);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 40px;
+}
+.welcome-p{
+    text-align: left;
+    font-family: 'Irish Grover', cursive;
+    font-size: 40px;
+    padding-left:23px;
+    line-height: 50px;
+
+}
+.score-p{
+    font-family: 'Irish Grover', cursive;
+    font-size: 40px;
+    padding-left:23px;
+    color: rgb(184, 114, 10);
+}
+.rules-p{
+    font-size:25px ;
+    font-family: 'Josefin Sans', sans-serif; 
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+ul{
+    font-family:'Josefin Sans', sans-serif;  
+    margin-top: 0px;
+}
+#begin-btn{
+    width: 30%;
+    border-radius: 10px;
+    border:none;
+    padding: 10px 18px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    margin: auto ;
+    cursor: pointer;
+    background-color: rgb(184, 114, 10);
+    font-size: 17px;
+}
+
+#restartBtn{
+    width: 30%;
+    border-radius: 10px;
+    border:none;
+    padding: 10px 18px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    background-color: rgb(184, 114, 10);
+    font-size: 17px;
+}
+/* --------------------------------end------------------------------------------------------ */
+
+
+
 @media (max-width:600px){
     .game-container{
         grid-template-columns: repeat(4,auto);
@@ -203,5 +353,31 @@ body{
     .spider{
     width: 38px;
     height: 64px;
+    }
+    .wish{
+        line-height: 50px;
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 1px;
+    }
+    .question-p{
+        line-height:30px;
+    }
+    .halloween-ctn{
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+    }
+    .rules-container{
+        min-height: 80%;
+        width: 80%;
+        margin-top: 80px;
+        line-height: 30px;
+    }
+    .welcome-p{
+        font-size: 30px;
+    }
+    #begin-btn{
+        width: 60%;
     }
 }

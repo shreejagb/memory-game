@@ -8,35 +8,77 @@
     <script src="script.js" async></script>
     <!-- <script src="classes.js" async></script> -->
     <link rel="stylesheet" href="style.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Josefin+Sans&display=swap" rel="stylesheet">
 <body>
+
+<!-- -----------------Asking for name conatiner----- -->
+<div id="happy-halloween" class="halloween-bg">
+    <div class="halloween-ctn">
+        <h1 class="wish">Happy halloween</h1>
+        <form>
+            <p class="question-p">What's your name?</p>
+            <input type="text" id="name-input" placeholder="Enter your name" required>
+            <button id="enter-btn"  type="button" class="enter-btn">Enter</button>
+        </form>
+    </div> 
+</div>
+
+<!-- -----------------rules conatiner----------------- -->
+    <div id="rules" class="halloween-bg">
+       <div class="rules-container">          
+            <h1 class="welcome-p">Hello <span id="name"></span>,<br> Welcome to Mix-Or-Match</h1>         
+            <p class="rules-p">Let me quickly tell you <strong>the rules </strong> </p>
+          <ul>
+             <li>You have to flip two cards such that they are identical</li>
+             <li>You have to flip all the cards in less than 100sec</li>
+             <li>Your challenge is to flip all the cards in as less number of flips as possible and as fast as you can</li>
+            </ul>
+          <button id="begin-btn">Got it! Let's begin</button> 
+        </div> 
+    </div>
+    <!-- -------------score overlay--------->
+    <div id = "scoreCtn" class="halloween-bg">
+        <div class="rules-conatiner">
+            <h1 class="score-p">Your score: <span id="score"></span>
+            <button id="restartBtn">Play Again</button> 
+        </div>
+
+    </div>
+    <!-- class to make the above overlays visible is "name-visible" -->
+
     <h1 class="page-title">Mix-Or-Match</h1>
-    <div class="overlay-text visible">
+    <div id="start-game-overlay" class="overlay-text visible">
         Click To Start
     </div>
-    <div id="game-over-text" class="overlay-text">
+    
+    <div id="game-over-text" class="overlay-text overlays">
         Game Over
         <span class="overlay-text-small">
             Click to restart
         </span>
     </div>
-    <div id="victory-text" class="overlay-text ">
+<!-- ---------victory overlay---------- -->
+    <div id="victory-text" class="overlay-text overlays ">
         Victory
+        
         <span class="overlay-text-small">
-            Click to restart
+            Click to view the score
         </span>
     </div>
+
     <div class="game-container">
-    <div class="game-info-container">
-        <div class="game-info">
-            Time <span id="time-remaining"> 100</span>
-        </div>
-        <div class="game-info">
-            Flips <span id="flips">0</span>
-        </div>
+        <div class="game-info-container">
+            <div class="game-info">
+                Time <span id="time-remaining"> 100</span>
+            </div>
+            <div class="game-info">
+                Flips <span id="flips">0</span>
+            </div>
     </div>
+
     <div class="card">
         <div class="card-back card-face">
+            
             <img class="cob-web cob-web-top-left"
             src="Assets/Images/Cobweb.png">
             <img class="cob-web cob-web-top-right"
@@ -452,12 +494,6 @@
         </div>
     </div> 
  </div> 
-
-     
-    
-   
-
-
 
 </body>
 </html> 
