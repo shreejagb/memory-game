@@ -173,7 +173,8 @@ function ready(){
         nameHolder.innerText = nameInput.value
     })
     //--------function to start----------------   
-    letsBeginBtn.addEventListener("click",()=>{
+    letsBeginBtn.addEventListener("click",(event)=>{
+        event.preventDefault()
         rules.classList.remove("name-visible")
         game.startGame()
     })
