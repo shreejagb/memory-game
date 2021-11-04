@@ -17,6 +17,7 @@ html{
     min-height: 100vh;
     max-height: 100vh;
     cursor: url("Assets/Cursors/Ghost.cur"),auto;
+    touch-action: manipulation;
 }
 body{
     margin: 0;
