@@ -166,7 +166,8 @@ function ready(){
             startOverlay.classList.remove("visible")
         })
     //--------function to make the rules overlay visible-------------
-    enterBtn.addEventListener("click",()=>{
+    enterBtn.addEventListener("click",(event)=>{
+        event.preventDefault()
         let rules = document.getElementById("rules")
         rules.classList.add("name-visible")
         halloweenWish.classList.remove("name-visible")
